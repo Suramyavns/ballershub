@@ -3,8 +3,7 @@ import Video from './pages/Video';
 import Livescore from './pages/Livescore'
 import History from './pages/History';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVideo, faWifi } from '@fortawesome/free-solid-svg-icons';
-import { faFutbol } from '@fortawesome/free-regular-svg-icons';
+import { faBook, faVideo, faWifi } from '@fortawesome/free-solid-svg-icons';
 
 const App = () =>{
     const [page,setPage]=useState({
@@ -49,8 +48,8 @@ const App = () =>{
                     <p className='hidden sm:flex'>Video</p>
                 </button>
                 <button onClick={showHistory} className={navBtnStyle} type="button">
-                    <FontAwesomeIcon icon={faFutbol} />
-                    <p className='hidden sm:flex'>History</p>
+                    <FontAwesomeIcon icon={faBook} />
+                    <p className='hidden sm:flex'>Wiki</p>
                 </button>
             </div>
         </div>
