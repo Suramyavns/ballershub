@@ -3,7 +3,10 @@ import { fetchData } from '../utils.js/dataFetch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbolBall } from '@fortawesome/free-regular-svg-icons';
 import './Leagues.css'
-const Leagues = (props) => {    
+import Modal from './Modal';
+const Leagues = (props) => {
+    const [selection,setSelection] = useState({})  
+    const [showSelection,setShowSelection] = useState(false)
     const [filter,setFilter]=useState('')
     const [isLoading,setIsLoading] = useState(false);
     const [leagues,setLeagues]=useState([])
@@ -27,6 +30,10 @@ const Leagues = (props) => {
         })
         fetchLeagues(props.url)
     },[])
+    const handleFlagClick = (league)=>{
+        setShowSelection(true);
+        setSelection(league);
+    }
     const flagStyle = 'h-24 sm:h-32 aspect-square rounded shadow-md hover:shadow-2xl duration-500'
   return (
     <div id="leagues" className='bg-gray-50 flex flex-col w-11/12 gap-2 text-left border rounded-lg p-3 m-2'>
@@ -38,17 +45,22 @@ const Leagues = (props) => {
                 if(filter!==''){
                     if(league.league_name.toLowerCase().startsWith(filter) || league.country_name.toLowerCase().startsWith(filter)){
                         return (
-                            <img loading='lazy' className={flagStyle} title={`${league.league_name},${league.country_name}`} key={league.league_id} src={league.league_logo} alt={league.league_name} />
+                            <button onClick={()=>{handleFlagClick(league)}}>
+                                <img className={flagStyle} title={`${league.league_name},${league.country_name}`} key={league.league_id} src={league.league_logo} alt={league.league_name} />
+                            </button>
                         )
                     }
                 }
                 else{
                     return (
-                        <img loading='lazy' className={flagStyle} title={`${league.league_name},${league.country_name}`} key={league.league_id} src={league.league_logo} alt={league.league_name} />
+                        <button onClick={()=>{handleFlagClick(league)}}>
+                            <img className={flagStyle} title={`${league.league_name},${league.country_name}`} key={league.league_id} src={league.league_logo} alt={league.league_name} />
+                        </button>
                     )
                 }
             })}
         </div>
+        <Modal data={selection} showModal={showSelection} setShowModal={setShowSelection} />
     </div>
   )
 }
