@@ -46,7 +46,7 @@ const Leagues = (props) => {
                     if(league.league_name.toLowerCase().startsWith(filter) || league.country_name.toLowerCase().startsWith(filter)){
                         return (
                             <button onClick={()=>{handleFlagClick(league)}}>
-                                <img className={flagStyle} title={`${league.league_name},${league.country_name}`} key={league.league_id} src={league.league_logo} alt={league.league_name} />
+                                <img loading='lazy' className={flagStyle} title={`${league.league_name},${league.country_name}`} key={league.league_id} src={league.league_logo} alt={league.league_name} />
                             </button>
                         )
                     }
@@ -54,7 +54,7 @@ const Leagues = (props) => {
                 else{
                     return (
                         <button onClick={()=>{handleFlagClick(league)}}>
-                            <img className={flagStyle} title={`${league.league_name},${league.country_name}`} key={league.league_id} src={league.league_logo} alt={league.league_name} />
+                            <img loading='lazy' className={flagStyle} title={`${league.league_name},${league.country_name}`} key={league.league_id} src={league.league_logo} alt={league.league_name} />
                         </button>
                     )
                 }

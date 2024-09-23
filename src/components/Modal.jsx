@@ -10,8 +10,8 @@ const Modal = ({ data, showModal, setShowModal }) => {
       <div className="bg-white rounded-lg p-6 shadow-lg w-96">
         <div className="flex justify-between items-center mb-4">
             <div className='flex gap-3 items-center'>
-                <img width={25} src={data.country_logo} alt={data.country_name} title={data.country_name} />
-                <img width={20} src={data.league_logo} alt={data.league_name} title={data.league_name} />
+                <img width={25} loading='lazy' src={data.country_logo} alt={data.country_name} title={data.country_name} />
+                <img width={20} loading='lazy' src={data.league_logo} alt={data.league_name} title={data.league_name} />
                 <h2 className="ws-bold text-xl font-semibold">{data.league_name}</h2>
             </div>
         <button
