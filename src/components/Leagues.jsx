@@ -34,7 +34,7 @@ const Leagues = (props) => {
         setShowSelection(true);
         setSelection(league);
     }
-    const flagStyle = 'h-24 sm:h-32 aspect-square rounded shadow-md hover:shadow-2xl duration-500'
+    const flagStyle = 'h-24 sm:h-32 aspect-square shadow-md hover:shadow-2xl duration-500 p-1'
   return (
     <div id="leagues" className='bg-gray-50 flex flex-col w-11/12 gap-2 text-left border rounded-lg p-3 m-2'>
         <div className='flex gap-4 items-center justify-center'>
@@ -45,16 +45,16 @@ const Leagues = (props) => {
                 if(filter!==''){
                     if(league.league_name.toLowerCase().startsWith(filter) || league.country_name.toLowerCase().startsWith(filter)){
                         return (
-                            <button onClick={()=>{handleFlagClick(league)}}>
-                                <img loading='lazy' className={flagStyle} title={`${league.league_name},${league.country_name}`} key={league.league_id} src={league.league_logo} alt={league.league_name} />
+                            <button key={league.league_id} onClick={()=>{handleFlagClick(league)}}>
+                                <img loading='lazy' className={flagStyle} title={`${league.league_name},${league.country_name}`} src={league.league_logo} alt={league.league_name} />
                             </button>
                         )
                     }
                 }
                 else{
                     return (
-                        <button onClick={()=>{handleFlagClick(league)}}>
-                            <img loading='lazy' className={flagStyle} title={`${league.league_name},${league.country_name}`} key={league.league_id} src={league.league_logo} alt={league.league_name} />
+                        <button key={league.league_id} onClick={()=>{handleFlagClick(league)}}>
+                            <img loading='lazy' className={flagStyle} title={`${league.league_name},${league.country_name}`} src={league.league_logo} alt={league.league_name} />
                         </button>
                     )
                 }

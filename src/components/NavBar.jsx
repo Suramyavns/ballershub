@@ -1,28 +1,31 @@
 import React from 'react'
 
-const NavBar = ({setCardContent}) => {
+const NavBar = ({currentContent,setCardContent}) => {
     const navs = [
         {
             'title':'Standings',
-            'slug':'standings'
+            'slug':'standings',
+            'endpoint':'get_standings'
         },
         {
             'title':'Teams',
-            'slug':'teams'
+            'slug':'teams',
+            'endpoint':'get_teams'
         },
         {
             'title':'Top Scorers',
-            'slug':'topscorers'
+            'slug':'topscorers',
+            'endpoint':'get_topscorers'
         },
     ]
-    const navStyle = 'px-4 focus:text-blue-500'
+    const navStyle = 'px-4 '
   return (
     <div className='flex w-full justify-around ws-light'>
       {
         navs.map((nav)=>{
             return(
                 <>
-                <button onClick={()=>{setCardContent(nav.slug)}} className={navStyle}>{nav.title}</button>
+                <button key={nav.slug} onClick={()=>{setCardContent(nav)}} className={navStyle.concat(nav.slug===currentContent.slug?'text-blue-500':'')}>{nav.title}</button>
                 {nav.slug===navs[navs.length-1].slug?<></>:<p className='border' />}
                 </>
             )

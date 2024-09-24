@@ -17,3 +17,4 @@ const History = () => {
 }
 
 export default History
+export {getUrl}
