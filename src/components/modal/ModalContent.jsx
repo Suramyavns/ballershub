@@ -3,7 +3,7 @@ import { getUrl } from '../../pages/History'
 import { fetchData } from '../../utils.js/dataFetch'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFutbolBall } from '@fortawesome/free-regular-svg-icons'
-import LeagueContent from '../league/LeagueContent'
+import LeagueContent from './LeagueContent'
 const ModalContent = ({content,id}) => {
     const [data,setData] = useState([])
     const [isLoading,setIsLoading] = useState(false)
