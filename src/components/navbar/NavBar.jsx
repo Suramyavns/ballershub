@@ -20,13 +20,13 @@ const NavBar = ({currentContent,setCardContent}) => {
     ]
     const navStyle = 'px-4 '
   return (
-    <div className='flex w-full justify-around ws-light'>
+    <div key='navBar' className='flex w-full justify-around ws-light'>
       {
         navs.map((nav)=>{
             return(
                 <>
                 <button key={nav.slug} onClick={()=>{setCardContent(nav)}} className={navStyle.concat(nav.slug===currentContent.slug?'text-blue-500':'')}>{nav.title}</button>
-                {nav.slug===navs[navs.length-1].slug?<></>:<p className='border' />}
+                {nav.slug!==navs[navs.length-1].slug?<p className='border' key={nav.endpoint} />:''}
                 </>
             )
         })

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { fetchData } from '../utils.js/dataFetch';
+import { fetchData } from '../../utils.js/dataFetch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbolBall } from '@fortawesome/free-regular-svg-icons';
 import './Leagues.css'
-import Modal from './Modal';
+import Modal from '../modal/Modal';
 const Leagues = (props) => {
     const [selection,setSelection] = useState({})  
     const [showSelection,setShowSelection] = useState(false)

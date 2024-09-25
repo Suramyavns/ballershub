@@ -1,5 +1,5 @@
 import React from 'react'
-import Leagues from '../components/Leagues';
+import Leagues from '../components/league/Leagues';
 
 
 function getUrl(endpoint){

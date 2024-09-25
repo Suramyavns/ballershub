@@ -1,6 +1,6 @@
 // src/components/Modal.js
 import React, { useState } from 'react';
-import NavBar from './NavBar';
+import NavBar from '../navbar/NavBar';
 import ModalContent from './ModalContent';
 
 const Modal = ({ data, showModal, setShowModal }) => {
