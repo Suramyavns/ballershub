@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import NavBar from '../navbar/NavBar';
 import ModalContent from './ModalContent';
+import Image from '../Image';
 
 const Modal = ({ data, showModal, setShowModal }) => {
   if (!showModal) return null;
@@ -17,8 +18,8 @@ const Modal = ({ data, showModal, setShowModal }) => {
       <div className="bg-white rounded-lg p-6 shadow-lg w-11/12">
         <div className="flex justify-between items-center mb-4">
             <div className='flex gap-3 items-center'>
-                <img width={25} loading='lazy' src={data.country_logo} alt={data.country_name} title={data.country_name} />
-                <img width={20} loading='lazy' src={data.league_logo} alt={data.league_name} title={data.league_name} />
+                <Image style='w-6' src={data.country_logo} title={data.country_name} />
+                <Image style='w-6' src={data.league_logo} title={data.league_name} />
                 <span className='flex gap-2 items-center'>
                   <h2 className="ws-bold text-xl font-semibold">
                     {data.league_name}

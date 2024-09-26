@@ -47,7 +47,7 @@ const Leagues = (props) => {
                     if(league.league_name.toLowerCase().startsWith(filter) || league.country_name.toLowerCase().startsWith(filter)){
                         return (
                             <button key={league.league_id} onClick={()=>{handleFlagClick(league)}}>
-                                <img loading='lazy' className={flagStyle} title={`${league.league_name},${league.country_name}`} src={league.league_logo} alt={league.league_name} />
+                                <Image src={league.league_logo} style={flagStyle} title={`${league.league_name},${league.country_name}`} />
                             </button>
                         )
                     }

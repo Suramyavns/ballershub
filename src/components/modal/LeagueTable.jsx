@@ -1,6 +1,7 @@
 import { faFrown } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import Image from "../Image";
 
 const LeagueTable = ({data}) =>{
     useEffect(()=>{console.log(data)},[data])
@@ -24,7 +25,7 @@ const LeagueTable = ({data}) =>{
                     <span className="flex py-2 border border-x-0 border-b-0 items-center justify-center">
                         <span className="flex justify-start items-center w-1/2">
                             <p className="hidden sm:flex ml-5">{teamData.overall_league_position}</p>
-                            <img className="w-4 mx-1 md:mx-4" loading="lazy" src={teamData.team_badge} alt='logo' />
+                            <Image style="w-4 mx-1 md:mx-4" src={teamData.team_badge} />
                             <p className="text-xs sm:text-lg">{teamData.team_name}</p>
                         </span>
                         <span className="flex justify-evenly gap-3.5 md:gap-2 w-1/2">
