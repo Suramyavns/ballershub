@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbolBall } from '@fortawesome/free-regular-svg-icons';
 import './Leagues.css'
 import Modal from '../modal/Modal';
+import Image from '../Image';
 const Leagues = (props) => {
     const [selection,setSelection] = useState({})  
     const [showSelection,setShowSelection] = useState(false)
@@ -54,7 +55,7 @@ const Leagues = (props) => {
                 else{
                     return (
                         <button key={league.league_id} onClick={()=>{handleFlagClick(league)}}>
-                            <img loading='lazy' className={flagStyle} title={`${league.league_name},${league.country_name}`} src={league.league_logo} alt={league.league_name} />
+                            <Image src={league.league_logo} style={flagStyle} title={`${league.league_name},${league.country_name}`} />
                         </button>
                     )
                 }
