@@ -4,7 +4,7 @@ const LeagueTable = ({data}) =>{
     useEffect(()=>{},[data])
     return(
         <div className="h-full w-full flex flex-col overflow-auto gap-1">
-            <span className="flex py-2 px-1 border border-x-0 border-b-0 font-semibold justify-center">
+            <span className="flex py-2 px-1 border border-x-0 border-b-0 font-semibold justify-between">
                 <span className="flex justify-start items-center w-5/12 md:w-1/2 sm:mr-3">
                     <p>Club</p>
                 </span>
