@@ -20,7 +20,7 @@ const Modal = ({ data, showModal, setShowModal }) => {
             <div className='flex gap-3 items-center'>
                 <Image style='w-6' src={data.country_logo} title={data.country_name} />
                 <Image style='w-6' src={data.league_logo} title={data.league_name} />
-                <span className='flex gap-2 items-center'>
+                <span className='flex gap-2 items-center flex-wrap'>
                   <h2 className="ws-bold text-xl font-semibold">
                     {data.league_name}
                   </h2>

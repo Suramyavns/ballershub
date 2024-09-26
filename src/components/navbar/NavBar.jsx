@@ -13,7 +13,7 @@ const NavBar = ({currentContent,setCardContent}) => {
             'endpoint':'get_teams'
         },
         {
-            'title':'Top Scorers',
+            'title':'Stats',
             'slug':'topscorers',
             'endpoint':'get_topscorers'
         },
