@@ -1,7 +1,9 @@
+import { faFrown } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
 const LeagueTable = ({data}) =>{
-    useEffect(()=>{},[data])
+    useEffect(()=>{console.log(data)},[data])
     return(
         <div className="h-full w-full flex flex-col overflow-auto gap-1">
             <span className="flex py-2 px-1 border border-x-0 border-b-0 font-semibold justify-between">
@@ -17,7 +19,7 @@ const LeagueTable = ({data}) =>{
                     <p className="w-10 flex justify-center">D</p>
                 </span>
             </span>
-            {data.map((teamData)=>{
+            {data.length > 0?data.map((teamData)=>{
                 return(
                     <span className="flex py-2 border border-x-0 border-b-0 items-center justify-center">
                         <span className="flex justify-start items-center w-1/2">
@@ -34,7 +36,12 @@ const LeagueTable = ({data}) =>{
                         </span>
                     </span>
                 )
-            })}
+            }):
+            <span className="flex justify-center items-center h-full gap-2 font-bold text-2xl">
+                <FontAwesomeIcon icon={faFrown} />
+                <p>Data Unavailable</p>
+            </span>
+            }
         </div>
     )
 }
