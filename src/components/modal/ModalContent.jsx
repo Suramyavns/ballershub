@@ -26,10 +26,10 @@ const ModalContent = ({content,id}) => {
         getData(newUrl)
     },[content])
   return (
-    <div>
+    <>
         {isLoading?<FontAwesomeIcon size='2x' icon={faFutbolBall} className='animate-spin' />:
         <LeagueContent content={content} id={id} data={data} />}
-    </div>
+    </>
   )
 }
 

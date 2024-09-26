@@ -14,7 +14,7 @@ const Leagues = (props) => {
         try{
             const data = await fetchData(leaguesUrl);
             setLeagues(()=>{
-                return data;
+                return data
             })
             setIsLoading(()=>{
                 return false;

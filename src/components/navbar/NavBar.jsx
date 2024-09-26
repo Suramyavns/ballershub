@@ -31,7 +31,7 @@ const NavBar = ({currentContent,setCardContent}) => {
             )
         })
       }
-    </div>
+      </div>
   )
 }
 

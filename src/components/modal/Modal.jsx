@@ -13,13 +13,20 @@ const Modal = ({ data, showModal, setShowModal }) => {
     } 
   )
   return (
-    <div className="fixed px-4 sm:px-0 inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 shadow-lg w-96">
+    <div className="fixed px-4 sm:px-0 inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 ws-light">
+      <div className="bg-white rounded-lg p-6 shadow-lg w-11/12">
         <div className="flex justify-between items-center mb-4">
             <div className='flex gap-3 items-center'>
                 <img width={25} loading='lazy' src={data.country_logo} alt={data.country_name} title={data.country_name} />
                 <img width={20} loading='lazy' src={data.league_logo} alt={data.league_name} title={data.league_name} />
-                <h2 className="ws-bold text-xl font-semibold">{data.league_name}</h2>
+                <span className='flex gap-2 items-center'>
+                  <h2 className="ws-bold text-xl font-semibold">
+                    {data.league_name}
+                  </h2>
+                  <h2 className="ws-bold text-xs sm:text-xl font-semibold">
+                    {data.league_season}
+                  </h2>
+                </span>
             </div>
         <button
             onClick={() => setShowModal(false)}
@@ -30,8 +37,7 @@ const Modal = ({ data, showModal, setShowModal }) => {
         </div>
         <div className='flex flex-col gap-2 justify-center items-center'>
           <NavBar currentContent={content} setCardContent={setContent} />
-          <hr className='w-full mt-3' />
-          <div className='w-full flex justify-center items-center h-36'>
+          <div className='w-full flex justify-center items-center h-64'>
             <ModalContent content={content} id={data.league_id} />
           </div>
         </div>

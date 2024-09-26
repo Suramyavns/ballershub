@@ -9,9 +9,9 @@ const LeagueContent = ({content,id,data}) => {
     'topscorers':<LeagueTopScorers data={data}/>
   }
   return (
-    <div>
+      <>
       {contentDict[content.slug]}
-    </div>
+      </>
   )
 }
 
