@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "../Image";
 
 const LeagueTable = ({data}) =>{
-    useEffect(()=>{console.log(data)},[data])
+    useEffect(()=>{},[data])
     return(
         <div className="h-full w-full flex flex-col overflow-auto gap-1">
             <span className="flex py-2 px-1 border border-x-0 border-b-0 font-semibold justify-between text-xs sm:text-lg">
@@ -23,7 +23,7 @@ const LeagueTable = ({data}) =>{
             <div className="overflow-auto">
             {data.length > 0?data.map((teamData)=>{
                 return(
-                    <span className="flex py-2 border border-x-0 border-b-0 items-center justify-center text-xs sm:text-lg">
+                    <span key={teamData.team_id} className="flex py-2 border border-x-0 border-b-0 items-center justify-center text-xs sm:text-lg">
                         <span className="flex justify-start items-center w-1/2">
                             <p className="ml-2 sm:ml-5">{teamData.overall_league_position}</p>
                             <Image style="w-4 mx-1 md:mx-4" src={teamData.team_badge} />

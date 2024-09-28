@@ -5,7 +5,6 @@ import History from './pages/History';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faVideo, faWifi } from '@fortawesome/free-solid-svg-icons';
 import { faFutbolBall } from '@fortawesome/free-regular-svg-icons';
-
 const App = () =>{
     const [page,setPage]=useState({
         description:'live',
