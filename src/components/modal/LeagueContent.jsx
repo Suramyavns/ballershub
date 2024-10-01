@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import LeagueTable from './LeagueTable'
 import LeagueTeams from './Teams'
-import LeagueTopScorers from './TopScorers'
+import Fixtures from '../fixtures/fixtures'
 const LeagueContent = ({content,id,data}) => {
   const contentDict = {
     'standings':<LeagueTable data={data} />,
     'teams':<LeagueTeams data={data} />,
-    'topscorers':<LeagueTopScorers data={data}/>
+    'fixtures':<Fixtures data={data}/>
   }
   return (
       <>
