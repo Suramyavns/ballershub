@@ -43,10 +43,7 @@ const App = () =>{
         <div className='flex flex-col h-screen justify-evenly items-center w-full'>
             {loading?<FontAwesomeIcon size='3x' icon={faFutbolBall} className='animate-spin'/>:page.content}
             <div
-            style={{
-                backgroundColor:'#f0f0f0'
-            }}
-            className='fixed -bottom-2 h-16 flex justify-center w-full px-5 rounded-md gap-3 pb-3'>
+            className='bg-white fixed -bottom-2 h-16 flex justify-center w-full px-5 rounded-md gap-3 pb-3'>
                 <button onClick={showLiveScore} className={navBtnStyle} type="button">
                     <FontAwesomeIcon color='black' icon={faWifi} />
                     <p className='hidden sm:flex'>Live</p>

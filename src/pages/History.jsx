@@ -10,7 +10,7 @@ function getUrl(endpoint){
 
 const History = () => {
   return (
-    <div style={{backgroundColor:'#f0f0f0'}} id='wiki' className='w-screen flex flex-col gap-5 h-screen justify-start items-center overflow-auto'>
+    <div id='wiki' className='w-screen flex flex-col gap-5 h-screen justify-start items-center overflow-auto'>
         <Leagues url={getUrl('get_leagues')} />
     </div>
   )
