@@ -18,16 +18,19 @@ const NavBar = ({currentContent,setCardContent}) => {
             'endpoint':'get_topscorers'
         },
     ]
-    const navStyle = 'px-4 '
+    const navStyle = 'px-4 w-full '
   return (
     <div key='navBar' className='flex w-full justify-around ws-light'>
       {
         navs.map((nav)=>{
             return(
-                <>
-                <button key={nav.slug} onClick={()=>{setCardContent(nav)}} className={navStyle.concat(nav.slug===currentContent.slug?'text-blue-500':'')}>{nav.title}</button>
-                {nav.slug!==navs[navs.length-1].slug?<p className='border' key={nav.endpoint} />:''}
-                </>
+                <button
+                style={nav.slug!==navs[navs.length-1].slug?{borderRight:'1px solid gray'}:{}}
+                key={nav.slug}
+                onClick={()=>{setCardContent(nav)}}
+                className={navStyle.concat(nav.slug===currentContent.slug?'text-blue-500':'')}>
+                    {nav.title}
+                </button>
             )
         })
       }

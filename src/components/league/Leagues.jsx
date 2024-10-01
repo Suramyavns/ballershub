@@ -37,7 +37,7 @@ const Leagues = (props) => {
     }
     const flagStyle = 'h-24 sm:h-32 aspect-square shadow-md hover:shadow-2xl duration-500 p-1'
   return (
-    <div id="leagues" className='bg-gray-50 flex flex-col w-11/12 gap-2 text-left border rounded-lg p-3 m-2'>
+    <div id="leagues" className='flex flex-col w-11/12 gap-2 text-left border rounded-lg p-3 m-2'>
         <div className='flex gap-4 items-center justify-center'>
             <input onChange={(e)=>{setFilter(e.target.value.toLowerCase().trim())}} type="search" className='focus:outline-none rounded-lg border text-sm p-1 w-11/12' placeholder='Filter by name or country' />
         </div>
