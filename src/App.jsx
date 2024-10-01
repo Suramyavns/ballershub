@@ -11,7 +11,7 @@ const App = () =>{
         content:<Livescore/>
     })
     const [loading,setLoading]=useState(true)
-    const navBtnStyle = 'w-20 md:w-15 h-full p-3 m-1 rounded flex flex-col justify-center items-center text-gray-800 ws-bold hover:bg-slate-100'
+    const navBtnStyle = 'w-20 md:w-15 h-full p-3 m-1 rounded flex flex-col justify-center items-center ws-light '
     const showLiveScore = () =>{
         setPage(()=>{
             return {
@@ -42,17 +42,21 @@ const App = () =>{
     return(
         <div className='flex flex-col h-screen justify-evenly items-center w-full'>
             {loading?<FontAwesomeIcon size='3x' icon={faFutbolBall} className='animate-spin'/>:page.content}
-            <div className='fixed -bottom-2 h-16 flex justify-center bg-white w-full px-5 rounded-md gap-3 pb-3'>
+            <div
+            style={{
+                backgroundColor:'#f0f0f0'
+            }}
+            className='fixed -bottom-2 h-16 flex justify-center w-full px-5 rounded-md gap-3 pb-3'>
                 <button onClick={showLiveScore} className={navBtnStyle} type="button">
-                    <FontAwesomeIcon icon={faWifi} />
+                    <FontAwesomeIcon color='black' icon={faWifi} />
                     <p className='hidden sm:flex'>Live</p>
                 </button>
                 <button onClick={showVideo} className={navBtnStyle} type="button">
-                    <FontAwesomeIcon icon={faVideo} />
+                    <FontAwesomeIcon color='black' icon={faVideo} />
                     <p className='hidden sm:flex'>Video</p>
                 </button>
                 <button onClick={showHistory} className={navBtnStyle} type="button">
-                    <FontAwesomeIcon icon={faBook} />
+                    <FontAwesomeIcon color='black' icon={faBook} />
                     <p className='hidden sm:flex'>Wiki</p>
                 </button>
             </div>

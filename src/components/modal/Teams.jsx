@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFrown } from "@fortawesome/free-regular-svg-icons";
 import Image from "../Image";
+import TeamCard from "./TeamCard";
 const LeagueTeams = ({data}) =>{
+    const [displayTeamId,setDisplayTeamId] = useState(null)
     useEffect(()=>{
     },[data])
     return(
@@ -11,7 +13,7 @@ const LeagueTeams = ({data}) =>{
                 {data.length!==0?
                 data.map((team)=>{
                     return(
-                        <span key={team.team_key} className="w-full border-t-2 py-2 flex justify-between items-center gap-2">
+                        <span key={team.team_key} className="w-full flex-wrap border-t-2 py-2 flex justify-between items-center gap-2">
                             <span className="flex gap-3 items-center">
                                 <Image src={team.team_badge} style='w-8' />
                                 <p className="text-xs sm:text-lg">{team.team_name}</p>
@@ -19,12 +21,20 @@ const LeagueTeams = ({data}) =>{
                             <span className="mx-4 w-fit flex justify-center items-center">
                                 <button
                                 className=" bg-slate-200 flex h-8 w-16 sm:w-fit sm:h-fit duration-500 hover:bg-slate-100 hover:text-blue-600 p-2 rounded-lg justify-center items-center gap-1"
-                                type="button">
+                                type="button"
+                                onClick={()=>{
+                                    setDisplayTeamId(()=>{
+                                        console.log(team.team_key)
+                                        return displayTeamId===team.team_key?null:team.team_key
+                                    })
+                                }}>
                                     <p className="hidden sm:block">Know</p>
-                                    <p>More</p>
+                                    <p>{displayTeamId===team.team_key?'Less':'More'}</p>
                                 </button>
                             </span>
-
+                                {
+                                    displayTeamId===team.team_key?<TeamCard data={team} />:<></>
+                                }
                         </span>
                     )
                 })

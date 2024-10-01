@@ -5,7 +5,7 @@ const Livescore = () => {
     <iframe
     src={`https://www.scorebat.com/embed/livescore/?token=${scoreBat_API}`}
     allow="autoplay"
-    style={{ width: "100%", height: '100vh', overflow: "hidden", display: "block" }}
+    style={{ width: "100%", height: '100vh', display: "block" }}
     />
   )
   

@@ -20,7 +20,7 @@ const LeagueTable = ({data}) =>{
                     <p className="w-10 flex justify-center">D</p>
                 </span>
             </span>
-            <div className="overflow-auto">
+            <div id="container" className="overflow-auto">
             {data.length > 0?data.map((teamData)=>{
                 return(
                     <span key={teamData.team_id} className="flex py-2 border border-x-0 border-b-0 items-center justify-center text-xs sm:text-lg">
