@@ -33,3 +33,7 @@ iframe{
   font-weight: 600;
   font-style: normal;
 }
+
+#playerImage{
+  background-image: url('/person.png');
+}
