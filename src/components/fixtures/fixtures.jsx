@@ -24,19 +24,19 @@ const Fixtures = ({season,data}) => {
           fixtures.map(match=>{
             return(
               <div key={match.match_id} className='flex flex-col justify-center items-center border border-x-0 border-b-0 py-2'>
-                <div className='w-full text-xs sm:text-lg flex justify-between items-center'>
-                  <div className='w-1/3 gap-2 flex justify-start items-center' id='home'>
-                    <Image style='w-10' src={match.team_home_badge} />
-                    <p>{match.match_hometeam_name}</p>
+                <div id='fixture' className='w-full flex justify-between items-center'>
+                  <div className='w-2/5 gap-2 flex justify-start items-center' id='home'>
+                    <Image style='w-5 sm:w-10' src={match.team_home_badge} />
+                    <p className='text-left'>{match.match_hometeam_name}</p>
                   </div>
                   <div className='flex gap-2 font-semibold justify-center items-center' id='score'>
                     <p>{match.match_hometeam_ft_score}</p>
                     <p>-</p>
                     <p>{match.match_awayteam_ft_score}</p>
                   </div>
-                  <div className='w-1/3 gap-2 flex justify-end items-center' id='away'>
-                    <p>{match.match_awayteam_name}</p>
-                    <Image style='w-10' src={match.team_away_badge} />
+                  <div className='w-2/5 gap-2 flex justify-end items-center' id='away'>
+                    <p className='text-right'>{match.match_awayteam_name}</p>
+                    <Image style='w-5 sm:w-10' src={match.team_away_badge} />
                   </div>
                 </div>
                 {
@@ -48,7 +48,7 @@ const Fixtures = ({season,data}) => {
                   :<></>
                 }
 
-                <div className='text-gray-500 pt-2' id='details'>
+                <div className='text-gray-500 pt-2 w-full flex justify-center items-center ' id='details'>
                   <p>
                     <FontAwesomeIcon icon={faClock} /> {match.match_time} IST {match.match_date}, {match.match_stadium}
                   </p>

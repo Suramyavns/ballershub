@@ -37,8 +37,15 @@ iframe{
 #details{
   font-size: 10px;
 }
+#fixture{
+  font-size: 15px;
+}
 @media screen and (max-width:600px) {
   #details{
     font-size: 8px;
   }
+  #fixture{
+    font-size: 11px;
+  }
 }
+
