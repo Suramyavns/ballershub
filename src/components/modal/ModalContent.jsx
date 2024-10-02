@@ -4,7 +4,7 @@ import { fetchData } from '../../utils.js/dataFetch'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFutbolBall } from '@fortawesome/free-regular-svg-icons'
 import LeagueContent from './LeagueContent'
-const ModalContent = ({content,id}) => {
+const ModalContent = ({season,content,id}) => {
     const [data,setData] = useState([])
     const [isLoading,setIsLoading] = useState(false)
     const getData = async(url) =>{
@@ -28,7 +28,7 @@ const ModalContent = ({content,id}) => {
   return (
     <>
         {isLoading?<FontAwesomeIcon size='2x' icon={faFutbolBall} className='animate-spin' />:
-        <LeagueContent content={content} id={id} data={data} />}
+        <LeagueContent season={season} content={content} id={id} data={data} />}
     </>
   )
 }

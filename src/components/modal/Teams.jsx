@@ -10,10 +10,10 @@ const LeagueTeams = ({data}) =>{
     return(
         <div className="w-full h-full flex-col flex justify-center items-center">
             <div className="flex flex-col w-full overflow-auto">
-                {data.length!==0?
+                {data.length>0?
                 data.map((team)=>{
                     return(
-                        <div>
+                        <div key={team.team_key}>
                             <span key={team.team_key} className="w-full border-t-2 py-2 flex justify-between items-center gap-2">
                                 <span className="flex gap-3 items-center">
                                     <Image src={team.team_badge} style='w-8' />

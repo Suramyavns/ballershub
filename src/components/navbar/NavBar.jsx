@@ -1,5 +1,5 @@
 import React from 'react'
-
+const now = new Date()
 const NavBar = ({currentContent,setCardContent}) => {
     const navs = [
         {
@@ -15,7 +15,7 @@ const NavBar = ({currentContent,setCardContent}) => {
         {
             'title':'Fixtures',
             'slug':'fixtures',
-            'endpoint':'get_topscorers'
+            'endpoint':`get_events&from=${now.getFullYear()}-01-01&to=${now.getFullYear()}-${now.getMonth()}-${now.getDate()}&timezone=Asia/Kolkata`
         },
     ]
     const navStyle = 'px-4 w-full '

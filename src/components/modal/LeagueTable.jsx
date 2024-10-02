@@ -20,12 +20,17 @@ const LeagueTable = ({data}) =>{
                     <p className="w-10 flex justify-center">D</p>
                 </span>
             </span>
-            <div id="container" className="overflow-auto">
+            <div key="container" className="overflow-auto">
             {data.length > 0?data.map((teamData)=>{
                 return(
                     <span key={teamData.team_id} className="flex py-2 border border-x-0 border-b-0 items-center justify-center text-xs sm:text-lg">
                         <span className="flex justify-start items-center w-1/2">
-                            <p className="ml-2 sm:ml-5">{teamData.overall_league_position}</p>
+                            {teamData.league_round?
+                            <>
+                            <p className="sm:hidden font-semibold">{teamData.league_round.slice(5,7)}:</p>
+                            <p className="hidden sm:block mr-2 font-semibold">{teamData.league_round}</p>                            </>
+                            :''}
+                            <p>{teamData.overall_league_position}</p>
                             <Image style="w-4 mx-1 md:mx-4" src={teamData.team_badge} />
                             <p>{teamData.team_name}</p>
                         </span>

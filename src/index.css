@@ -34,6 +34,11 @@ iframe{
   font-style: normal;
 }
 
-#playerImage{
-  background-image: url('/person.png');
+#details{
+  font-size: 10px;
+}
+@media screen and (max-width:600px) {
+  #details{
+    font-size: 8px;
+  }
 }

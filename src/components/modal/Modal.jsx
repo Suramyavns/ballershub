@@ -39,7 +39,7 @@ const Modal = ({ data, showModal, setShowModal }) => {
         <div className='flex flex-col gap-2 justify-center items-center'>
           <NavBar currentContent={content} setCardContent={setContent} />
           <div className='w-full flex justify-center items-center h-64'>
-            <ModalContent content={content} id={data.league_id} />
+            <ModalContent season={data.league_season} content={content} id={data.league_id} />
           </div>
         </div>
       </div>
