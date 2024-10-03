@@ -13,7 +13,7 @@ const NavBar = ({currentContent,setCardContent}) => {
             'endpoint':'get_teams'
         },
         {
-            'title':'Fixtures',
+            'title':'Matches',
             'slug':'fixtures',
             'endpoint':`get_events&from=${now.getFullYear()}-01-01&to=${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}&timezone=Asia/Kolkata`
         },

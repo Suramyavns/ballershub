@@ -6,12 +6,15 @@ import { faCircle, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 const Fixtures = ({season,data}) => {
   const [fixtures,setFixtures] = useState([])
   useEffect(()=>{
-    const results = data.filter(
-      (match)=>{
-        return match.league_year===season
-      }
-    )
-    setFixtures(results)
+    let results = []
+    if(data.length>0){
+      results = data.filter(
+        (match)=>{
+          return match.league_year===season
+        }
+      )
+    }
+    setFixtures(results.reverse())
   },[data])
   return (
     <div className='flex flex-col w-full overflow-auto h-full justify-center items-center'>
@@ -50,7 +53,7 @@ const Fixtures = ({season,data}) => {
 
                 <div className='text-gray-500 pt-2 w-full flex justify-center items-center ' id='details'>
                   <p>
-                    <FontAwesomeIcon icon={faClock} /> {match.match_time} IST {match.match_date}, {match.match_stadium}
+                    <FontAwesomeIcon icon={faClock} /> {match.match_time} IST {new Date(match.match_date).toUTCString().slice(0,16)}, {match.match_stadium}
                   </p>
                 </div>
               </div>

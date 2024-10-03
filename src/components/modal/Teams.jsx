@@ -3,13 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFrown } from "@fortawesome/free-regular-svg-icons";
 import Image from "../Image";
 import TeamCard from "./TeamCard";
+import { v4 } from "uuid";
 const LeagueTeams = ({data}) =>{
     const [displayTeamId,setDisplayTeamId] = useState(null)
     useEffect(()=>{
     },[data])
     return(
         <div className="w-full h-full flex-col flex justify-center items-center">
-            <div className="flex flex-col w-full overflow-auto">
+            <div key={v4()} className="flex flex-col w-full overflow-auto">
                 {data.length>0?
                 data.map((team)=>{
                     return(
