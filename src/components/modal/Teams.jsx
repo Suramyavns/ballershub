@@ -10,7 +10,7 @@ const LeagueTeams = ({season,data}) =>{
     },[data])
     return(
         <div className="w-full h-full flex-col flex justify-center items-center">
-            <div key={v4()} className="flex flex-col w-full overflow-auto">
+            <div className="flex flex-col w-full overflow-auto">
                 {data.length>0?
                 data.map((team)=>{
                     return(
@@ -35,7 +35,7 @@ const LeagueTeams = ({season,data}) =>{
                                 </span>
                             </span>
                             {
-                                displayTeamId===team.team_key?<TeamCard season={season} data={team} />:<></>
+                                displayTeamId===team.team_key && <TeamCard season={season} data={team} />
                             }
                         </div>
                     )
