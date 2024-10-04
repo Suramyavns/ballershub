@@ -45,6 +45,7 @@ const TeamCard = ({season,data}) => {
                     }
                   </div>
                   <button
+                  name='Checkout Player Stats'
                   onClick={()=>{
                     setShowPlayer(()=>{
                       return showPlayer===player.player_id? null:player.player_id

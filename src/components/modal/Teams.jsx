@@ -22,6 +22,7 @@ const LeagueTeams = ({season,data}) =>{
                                 </span>
                                 <span className="mx-4 w-fit flex justify-center items-center">
                                     <button
+                                    name="Checkout this Team"
                                     className=" bg-slate-200 flex h-8 w-16 sm:w-fit sm:h-fit duration-500 hover:bg-slate-100 hover:text-blue-600 p-2 rounded-lg justify-center items-center gap-1"
                                     type="button"
                                     onClick={()=>{

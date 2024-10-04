@@ -46,7 +46,7 @@ const Leagues = (props) => {
                 if(filter!==''){
                     if(league.league_name.toLowerCase().startsWith(filter) || league.country_name.toLowerCase().startsWith(filter)){
                         return (
-                            <button key={league.league_id} onClick={()=>{handleFlagClick(league)}}>
+                            <button name='Checkout this league' key={league.league_id} onClick={()=>{handleFlagClick(league)}}>
                                 <Image src={league.league_logo} style={flagStyle} title={`${league.league_name},${league.country_name}`} />
                             </button>
                         )
@@ -54,7 +54,7 @@ const Leagues = (props) => {
                 }
                 else{
                     return (
-                        <button key={league.league_id} onClick={()=>{handleFlagClick(league)}}>
+                        <button name='Checkout this league' key={league.league_id} onClick={()=>{handleFlagClick(league)}}>
                             <Image src={league.league_logo} style={flagStyle} title={`${league.league_name},${league.country_name}`} />
                         </button>
                     )
