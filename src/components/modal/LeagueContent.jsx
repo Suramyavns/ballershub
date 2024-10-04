@@ -5,7 +5,7 @@ import Fixtures from '../fixtures/fixtures'
 const LeagueContent = ({season,content,id,data}) => {
   const contentDict = {
     'standings':<LeagueTable data={data} />,
-    'teams':<LeagueTeams data={data} />,
+    'teams':<LeagueTeams season={season} data={data} />,
     'fixtures':<Fixtures season={season} data={data}/>
   }
   return (

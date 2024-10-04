@@ -4,7 +4,7 @@ import { faFrown } from "@fortawesome/free-regular-svg-icons";
 import Image from "../Image";
 import TeamCard from "./TeamCard";
 import { v4 } from "uuid";
-const LeagueTeams = ({data}) =>{
+const LeagueTeams = ({season,data}) =>{
     const [displayTeamId,setDisplayTeamId] = useState(null)
     useEffect(()=>{
     },[data])
@@ -35,7 +35,7 @@ const LeagueTeams = ({data}) =>{
                                 </span>
                             </span>
                             {
-                                displayTeamId===team.team_key?<TeamCard data={team} />:<></>
+                                displayTeamId===team.team_key?<TeamCard season={season} data={team} />:<></>
                             }
                         </div>
                     )
