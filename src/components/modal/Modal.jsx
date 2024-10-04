@@ -30,7 +30,7 @@ const Modal = ({ data, showModal, setShowModal }) => {
                 </span>
             </div>
         <button
-          name='Close this popup'
+          aria-label='Close this popup'
             onClick={() => setShowModal(false)}
             className="text-gray-500 hover:text-gray-700"
           >

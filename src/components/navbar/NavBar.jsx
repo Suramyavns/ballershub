@@ -25,7 +25,7 @@ const NavBar = ({currentContent,setCardContent}) => {
         navs.map((nav)=>{
             return(
                 <button
-                name={`Know about ${nav.title}`}
+                aria-label={`Know about ${nav.title}`}
                 style={nav.slug!==navs[navs.length-1].slug?{borderRight:'1px solid gray'}:{}}
                 key={nav.slug}
                 onClick={()=>{setCardContent(nav)}}

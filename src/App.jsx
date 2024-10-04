@@ -44,17 +44,17 @@ const App = () =>{
             {loading?<FontAwesomeIcon size='3x' icon={faFutbolBall} className='animate-spin'/>:page.content}
             <div
             className='bg-white fixed -bottom-2 h-16 flex justify-center w-full px-5 rounded-md gap-3 pb-3'>
-                <button name='Watch Live' onClick={showLiveScore} className={navBtnStyle} type="button">
+                <button aria-labelledby='Watch Live' onClick={showLiveScore} className={navBtnStyle} type="button">
                     <FontAwesomeIcon color='black' icon={faWifi} />
-                    <p className='hidden sm:flex'>Live</p>
+                    <p id='Watch Live' className='hidden sm:flex'>Live</p>
                 </button>
-                <button name='Watch Video' onClick={showVideo} className={navBtnStyle} type="button">
+                <button aria-labelledby='Watch Video' onClick={showVideo} className={navBtnStyle} type="button">
                     <FontAwesomeIcon color='black' icon={faVideo} />
-                    <p className='hidden sm:flex'>Video</p>
+                    <p id='Watch Video' className='hidden sm:flex'>Video</p>
                 </button>
-                <button name='Check Wiki' onClick={showHistory} className={navBtnStyle} type="button">
+                <button aria-labelledby='Check Wiki' onClick={showHistory} className={navBtnStyle} type="button">
                     <FontAwesomeIcon color='black' icon={faBook} />
-                    <p className='hidden sm:flex'>Wiki</p>
+                    <p id='Check Wiki' className='hidden sm:flex'>Wiki</p>
                 </button>
             </div>
         </div>
