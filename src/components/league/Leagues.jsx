@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { fetchData } from '../../utils.js/dataFetch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFutbolBall } from '@fortawesome/free-regular-svg-icons';
+import { faCircle, faFutbolBall } from '@fortawesome/free-regular-svg-icons';
 import './Leagues.css'
 import Modal from '../modal/Modal';
 import Image from '../Image';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 const Leagues = (props) => {
     const [selection,setSelection] = useState({})  
     const [showSelection,setShowSelection] = useState(false)
@@ -38,7 +39,15 @@ const Leagues = (props) => {
     const flagStyle = 'h-24 sm:h-32 aspect-square shadow-md hover:shadow-2xl duration-500 p-1'
   return (
     <div id="leagues" className='flex flex-col w-11/12 gap-2 text-left border bg-slate-50 rounded-lg p-3 m-2'>
-        <div className='flex gap-4 items-center justify-center'>
+        <div className='flex flex-wrap gap-4 items-center justify-center'>
+            {
+                leagues.length<10?
+                <marquee className='text-xs text-gray-400 self-start flex gap-1 py-1 items-center'>
+                    <FontAwesomeIcon className='mx-1' icon={faCircleInfo}/>
+                    If you do not see sufficient data here then probably the servers are down
+                </marquee>
+                :''
+            }
             <input onChange={(e)=>{setFilter(e.target.value.toLowerCase().trim())}} type="search" className='focus:outline-none rounded-lg border text-sm p-1 w-11/12' placeholder='Filter by name or country' />
         </div>
         <div className='flex flex-wrap gap-3 overflow-auto items-center justify-center h-full'>
