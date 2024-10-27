@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { fetchData } from '../../utils.js/dataFetch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle, faFutbolBall } from '@fortawesome/free-regular-svg-icons';
+import { faFrown, faFutbolBall } from '@fortawesome/free-regular-svg-icons';
 import './Leagues.css'
 import Modal from '../modal/Modal';
 import Image from '../Image';
@@ -51,7 +51,7 @@ const Leagues = (props) => {
             <input onChange={(e)=>{setFilter(e.target.value.toLowerCase().trim())}} type="search" className='focus:outline-none rounded-lg border text-sm p-1 w-11/12' placeholder='Filter by name or country' />
         </div>
         <div className='flex flex-wrap gap-3 overflow-auto items-center justify-center h-full'>
-            {isLoading?<FontAwesomeIcon size='3x' icon={faFutbolBall} className='animate-spin' />:leagues.map((league)=>{
+            {isLoading?<FontAwesomeIcon size='3x' icon={faFutbolBall} className='animate-spin' />:leagues.length>10? leagues.map((league)=>{
                 if(filter!==''){
                     if(league.league_name.toLowerCase().startsWith(filter) || league.country_name.toLowerCase().startsWith(filter)){
                         return (
@@ -68,7 +68,12 @@ const Leagues = (props) => {
                         </button>
                     )
                 }
-            })}
+            }):
+            <span className="flex justify-center items-center h-full gap-2 font-bold text-2xl">
+                <FontAwesomeIcon icon={faFrown} />
+                <p>Data Unavailable</p>
+            </span>
+            }
         </div>
         <Modal data={selection} showModal={showSelection} setShowModal={setShowSelection} />
     </div>
